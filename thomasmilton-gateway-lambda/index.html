@@ -70,6 +70,9 @@
 			  pointer-events:none;
 			}
 			*/
+			body {
+				padding:10px;
+			}
 		  
 			.details{
 			  color: white;
@@ -174,10 +177,10 @@
 		  return [-10, 0];
 		})
 		
-		d3.select('body')
+		d3.select('#ckmeans')
 			.style('overflow', 'hidden');
 		
-		const parentWidth = d3.select('body').node().getBoundingClientRect().width;
+		const parentWidth = d3.select('#ckmeans').node().getBoundingClientRect().width;
 		const margin = {top: 0, right: 0, bottom: 0, left: 0};
 		const width = 960 - margin.left - margin.right;
 		const height = 500 - margin.top - margin.bottom;
@@ -197,7 +200,7 @@
 		  ]);
 		
 		
-		const svg = d3.select('body')
+		const svg = d3.select('#ckmeans')
 		  .append('svg')
 		  .attr('width', width)
 		  .attr('height', height)
@@ -306,16 +309,14 @@
 		<img align="left" src="https://s3.amazonaws.com/our-daily-tech/icon.png">
 	<div align="center">
 		<br>
-		<br><h3>AWS API Gateway Lambda + S3 + Route 53 A Record Set Alias</h3>
+		<br><h4>AWS API Gateway Lambda + S3 + Route 53 A Record Set Alias</h4>
 		<br>
 		<br>
-		<h2>Hello <span id="tom-tom">Cloud ...</span></h2>
-		<button onclick="myFunction()">Hello who?</button>
-		<br>
-		<br />
-		<img src="https://s3.amazonaws.com/our-daily-tech/icon.png">
-		<h5>curl "https://o8fasqpzp4.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction" > myname.txt
-</h5>
+		<h4>Paging <span id="tom-tom">Cloud ... Making API Call ...</span></h4>
+		<button onclick="myFunction()">Hello who? Make the Call</button>
+<div id="ckmeans"></div> 
+		<code>curl "https://o8fasqpzp4.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction" > myname.txt
+			</code>
 	</div>
 
 	</body>
