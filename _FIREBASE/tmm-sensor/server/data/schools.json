@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Fort Craig",
+    "principal": "Michelle Thorne"
+  },
+  {
+    "id": 2,
+    "name": "Edgewood",
+    "principal": "Audrey Hills"
+  },
+  {
+    "id": 3,
+    "name": "Clarke",
+    "principal": "Scott Johnson"
+  },
+  {
+    "id": 4,
+    "name": "Meadowview",
+    "principal": "Jeffrey Bender"
+  },
+  {
+    "id": 5,
+    "name": "Coulter Ridge",
+    "principal": "Leigh Williams"
+  },
+  {
+    "id": 6,
+    "name": "Hilltop",
+    "principal": "Daniel Lanier"
+  }
+]

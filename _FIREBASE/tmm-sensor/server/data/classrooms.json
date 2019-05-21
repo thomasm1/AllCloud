@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Grade",
+    "teacher": "Beth Cox",
+    "message": "Always do your best!",
+    "school_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Marten",
+    "teacher": "Martin Elliott",
+    "message": "Treat people right!",
+    "school_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Smith",
+    "teacher": "Amanda Smith",
+    "message": "Do the right thing!",
+    "school_id": 2
+  },
+  {
+    "id": 4,
+    "name": "G",
+    "teacher": "Mike Johnson",
+    "message": "Math ",
+    "school_id": 2
+  },
+  {
+    "id": 5,
+    "name": "Msu",
+    "teacher": "Eliza Tanner",
+    "message": "Share ",
+    "school_id": 2
+  },
+  {
+    "id": 6,
+    "name":" Wired",
+    "teacher": "Linda Baker",
+    "message": "Reading",
+    "school_id": 4
+  },
+  {
+    "id": 7,
+    "name": "Mri",
+    "teacher": "Brian Henderson",
+    "message": "IT",
+    "school_id": 4
+  },
+  {
+    "id": 8,
+    "name": "Murr-8",
+    "teacher": "Michelle Carey",
+    "message": "Learn",
+    "school_id": 4
+  }
+]

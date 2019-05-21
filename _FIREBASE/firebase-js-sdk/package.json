@@ -1,0 +1,70 @@
+{
+  "name": "firebase-wrapper",
+  "version": "0.1.0",
+  "description": "Monorepo for the Firebase JavaScript SDK",
+  "private": true,
+  "author": "Firebase <firebase-support@google.com> (https://firebase.google.com/)",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/firebase/firebase-js-sdk",
+  "keywords": [
+    "authentication",
+    "database",
+    "Firebase",
+    "firebase",
+    "functions",
+    "realtime",
+    "storage"
+  ],
+  "scripts": {
+    "dev": "lerna run --parallel --scope @firebase/* --scope firebase --scope rxfire dev",
+    "prepare": "lerna run --scope @firebase/* --scope firebase --scope rxfire prepare",
+    "prepush": "node tools/gitHooks/prepush.js",
+    "link:packages": "lerna exec --scope @firebase/* --scope firebase --scope rxfire -- yarn link",
+    "stage:packages": "./scripts/prepublish.sh",
+    "repl": "node tools/repl.js",
+    "release": "node scripts/release/cli.js",
+    "pretest": "node tools/pretest.js",
+    "test": "lerna run --parallel --stream test",
+    "pretest:coverage": "mkdirp coverage",
+    "test:coverage": "lcov-result-merger 'packages/**/lcov.info' | coveralls",
+    "test:setup": "node tools/config.js",
+    "pretest:saucelabs": "lerna run --parallel pretest",
+    "test:saucelabs": "karma start config/karma.saucelabs.js --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firebase/firebase-js-sdk.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "integration/*"
+  ],
+  "devDependencies": {
+    "chalk": "2.3.2",
+    "child-process-promise": "2.2.1",
+    "clone": "2.1.1",
+    "coveralls": "3.0.0",
+    "dependency-graph": "0.7.0",
+    "firebase-tools": "5.1.1",
+    "glob": "7.1.2",
+    "husky": "0.14.3",
+    "inquirer": "5.2.0",
+    "istanbul-instrumenter-loader": "3.0.1",
+    "js-yaml": "3.12.1",
+    "lcov-result-merger": "2.0.0",
+    "lerna": "3.10.5",
+    "listr": "0.14.0",
+    "merge2": "1.2.1",
+    "mkdirp": "0.5.1",
+    "mz": "2.7.0",
+    "npm-run-path": "2.0.2",
+    "ora": "2.0.0",
+    "prettier": "1.12.0",
+    "semver": "5.5.0",
+    "simple-git": "1.92.0",
+    "typedoc": "0.14.2",
+    "ts-node": "8.0.2",
+    "typescript": "3.3.3",
+    "yargs": "11.0.0"
+  }
+}

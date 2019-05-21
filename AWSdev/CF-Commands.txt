@@ -1,0 +1,17 @@
+1) Create your EC2 instance using CloudFormation, the CF templates are provided by AWS and are in an S3 bucket, remember to update the command to reference the s3 bucket located in the region that you are working in and the name of a Key pair that you own in that region
+https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-ec2-create-cloudformation-template.html
+
+aws cloudformation create-stack \
+  --stack-name CodeDeployDemoStack \
+  --template-url http://s3-eu-west-1.amazonaws.com/aws-codedeploy-eu-west-1/templates/latest/CodeDeploy_SampleCF_Template.json \
+  --parameters ParameterKey=InstanceCount,ParameterValue=1 ParameterKey=InstanceType,ParameterValue=t1.micro \
+    ParameterKey=KeyPairName,ParameterValue=irkp ParameterKey=OperatingSystem,ParameterValue=Linux \
+    ParameterKey=SSHLocation,ParameterValue=0.0.0.0/0 ParameterKey=TagKey,ParameterValue=Name \
+    ParameterKey=TagValue,ParameterValue=CodeDeployDemo \
+  --capabilities CAPABILITY_IAM
+
+2) Verify that the Cloud Formation stack has completed using: 
+aws cloudformation describe-stacks --stack-name CodeDeployDemoStack --query "Stacks[0].StackStatus" --output text
+
+3) Log in to your instance and check that the CodeDeploy agent has correctly installed:  
+sudo service codedeploy-agent status

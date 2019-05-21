@@ -1,0 +1,72 @@
+[
+  {
+    "activity_id": 1,
+    "name": "Research Literature",
+    "date": "2015-10-01T16:00:00.000Z",
+    "classroom_id": 1,
+    "school_id": 1
+  },
+  {
+    "activity_id": 2,
+    "name": "Book Publications",
+    "date": "2015-10-06T16:00:00.000Z",
+    "classroom_id": 2,
+    "school_id": 1
+  },
+  {
+    "activity_id": 3,
+    "name": "Government Agency",
+    "date": "2015-10-19T16:00:00.000Z",
+    "classroom_id": 3,
+    "school_id": 2
+  },
+  {
+    "activity_id": 4,
+    "name": "Informal Sources",
+    "date": "2015-11-04T16:00:00.000Z",
+    "classroom_id": 4,
+    "school_id": 2
+  },
+  {
+    "activity_id": 5,
+    "name": "Cloud Archives",
+    "date": "2015-11-16T16:00:00.000Z",
+    "classroom_id": 5,
+    "school_id": 2
+  },
+  {
+    "activity_id": 6,
+    "name": "Visiting Author",
+    "date": "2015-11-18T16:00:00.000Z",
+    "classroom_id": 6,
+    "school_id": 4
+  },
+  {
+    "activity_id": 7,
+    "name": "Outdoor-Only",
+    "date": "2015-11-23T16:00:00.000Z",
+    "classroom_id": 7,
+    "school_id": 4
+  },
+  {
+    "activity_id": 8,
+    "name": "1",
+    "date": "2015-12-01T16:00:00.000Z",
+    "classroom_id": 8,
+    "school_id": 4
+  },
+  {
+    "activity_id": 9,
+    "name": "3",
+    "date": "2015-12-09T16:00:00.000Z",
+    "classroom_id": 1,
+    "school_id": 1
+  },
+  {
+    "activity_id": 10,
+    "name": "5",
+    "date": "2015-12-11T16:00:00.000Z",
+    "classroom_id": 1,
+    "school_id": 1
+  }
+]
