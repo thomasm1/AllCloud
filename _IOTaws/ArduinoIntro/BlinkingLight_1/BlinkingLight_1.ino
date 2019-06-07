@@ -1,0 +1,1 @@
+/*  Simple Wire for blinking an LED connect to the digital pin 32*/#define LED_OUT 2void setup() {  Serial.begin(9600);  pinMode(LED_OUT, OUTPUT);  }void loop() {  digitalWrite(LED_OUT, HIGH);  Serial.write("Led on\n");  delay(1000);  digitalWrite(LED_OUT, LOW);  Serial.write("Led off\n");  delay(1000);}

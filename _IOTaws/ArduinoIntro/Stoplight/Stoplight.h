@@ -1,0 +1,1 @@
+#define RED_LED_OUT 2#define YELLOW_LED_OUT 3#define GREEN_LED_OUT 4#define DELAY 1500#define DEBUG 0enum color {  RED, YELLOW, GREEN};
