@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": "public",
+    "redirects": [ {
+      "source" : "/me",
+      "destination" : "/about.html",
+      "type" : 301
+    },{
+      "source" : "/ervis/*",
+      "destination" : "https://dotnethow.net/",
+      "type" : 302
+    }],
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
+    "headers": [ {
+      "source" : "404.html",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=600"
+      }, {
+        "key" : "Access-Control-Allow-Origin",
+        "value" : "*"
+      } ]
+    } ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

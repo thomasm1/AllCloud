@@ -1,7 +1,0 @@
-Resources:
-  MyApplication:
-    Type: 'AWS::Serverless::Application'
-    Properties:
-      Location:
-        ApplicationId: non-existent
-        SemanticVersion: 1.0.0

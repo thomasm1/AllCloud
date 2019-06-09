@@ -1,7 +1,0 @@
-Resources:
-  # Body has to be a dictionary
-  ApiWithInvalidBodyType:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      DefinitionBody: "Hello world"
