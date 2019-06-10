@@ -1,7 +1,7 @@
 'use strict';
 
 const userStore = require('../data/users'),
-  pizzaStore = require('../data/pizzas');
+  thingStore = require('../data/things');
 
 function postUser (req, reply) {
   userStore.createUser(req.payload.username, req.payload.password, (user) => {
@@ -16,11 +16,11 @@ function postUser (req, reply) {
 
 function getUser (req, reply) {
   let username = req.params.username || req.auth.credentials.user.username;
-  pizzaStore.getPizzaForUser(username, (err, pizzas) => {
+  thingStore.getThingForUser(username, (err, things) => {
     let context = {
       username: username,
       auth: req.auth,
-      pizzas: pizzas
+      things: things
     };
     return reply.view('user', context);
   });

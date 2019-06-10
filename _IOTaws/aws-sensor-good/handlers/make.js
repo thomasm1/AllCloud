@@ -2,20 +2,20 @@
 
 const toppingStore = require('../data/toppings');
 
-function makePizza (req, reply) {
+function makeThing (req, reply) {
   toppingStore.getAllToppings((err, toppings) => {
     let context = {
       toppings: toppings,
       auth: req.auth
     };
-    return reply.view('pizza.make.hbs', context);
+    return reply.view('thing.make.hbs', context);
   });
 }
 
 module.exports = (req, reply) => {
   switch (req.params.target) {
-    case 'pizza':
-      makePizza(req, reply);
+    case 'thing':
+      makeThing(req, reply);
       break;
   }
 };

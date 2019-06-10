@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "starting pizza-luvrs"
-cd /home/ec2-user/pizza-luvrs
+echo "starting things"
+cd /home/ec2-user/things
 npm start

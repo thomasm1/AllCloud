@@ -7,7 +7,7 @@ $.get('/toppings', function (data) {
   loadImages();
 });
 
-var canvas = document.getElementById('pizza'),
+var canvas = document.getElementById('thing'),
   ctx = canvas.getContext('2d');
 attachHandlers();
 
@@ -31,10 +31,10 @@ function attachHandlers () {
 
 function addTopping (id) {
   toppings[id].added = !toppings[id].added;
-  redrawPizza();
+  redrawThing();
 }
 
-function redrawPizza () {
+function redrawThing () {
   ctx.clearRect(0, 0, 400, 400);
   $.each(toppings, function () {
     if (this.added) {
@@ -43,11 +43,11 @@ function redrawPizza () {
   });
 }
 
-function getPizzaImage () {
+function getThingImage () {
   return canvas.toDataURL("image/png");
 }
 
-function sendPizza () {
+function sendThing () {
   var topps = [];
 
   $.map(toppings, function (topping) {
@@ -59,17 +59,17 @@ function sendPizza () {
   var pkg = {
     toppings: topps,
     username: $('#userInfo').data('username'),
-    name: document.getElementById('pizzaName').value,
-    img: getPizzaImage()
+    name: document.getElementById('thingName').value,
+    img: getThingImage()
   };
 
   $.ajax({
     type: 'POST',
-    url: '/pizza',
+    url: '/thing',
     data: JSON.stringify(pkg),
     contentType: "application/json; charset=utf-8",
     success: function (data) {
-      window.location.assign('/pizza/' + pkg.name.replace(/ /g, '-'));
+      window.location.assign('/thing/' + pkg.name.replace(/ /g, '-'));
     }
   });
 }

@@ -1,12 +1,12 @@
 'use strict';
 
-const pizzaStore = require('../data/pizzas');
+const thingStore = require('../data/things');
 
 module.exports = (req, reply) => {
-  pizzaStore.getRecentPizzas((err, pizzas) => {
+  thingStore.getRecentThings((err, things) => {
     const context = {
       auth: req.auth,
-      pizzas: pizzas
+      things: things
     };
 
     return reply.view('index', context);

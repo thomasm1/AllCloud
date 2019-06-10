@@ -3,9 +3,9 @@
 module.exports = (handlers) => {
   return {
     method: 'GET',
-    path: '/pizza/{pizzaId}',
+    path: '/thing/{thingId}',
     config: {
-      handler: handlers.pizza,
+      handler: handlers.thing,
       auth: { mode: 'try' },
       plugins: {
         'hapi-auth-cookie': {

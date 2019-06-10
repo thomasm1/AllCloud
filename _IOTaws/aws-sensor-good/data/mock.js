@@ -1,7 +1,7 @@
 'use strict';
 
-const pizzas = require('./pizzas'),
-  Pizza = require('../models/pizza'),
+const things = require('./things'),
+  Thing = require('../models/thing'),
   users = require('./users'),
   transfile = require('../lib/transfile');
 
@@ -10,10 +10,10 @@ module.exports.insertData = () => {
   users.createUser('jim', 'pass', () => {});
   users.createUser('kathy', 'pass', () => {});
 
-  const files = transfile(__dirname + '/mock_pizzas/');
+  const files = transfile(__dirname + '/mock_things/');
   for (let key in files) {
-    let pizza = files[key];
-    pizzas.importPizza(pizza.name, pizza.toppings, pizza.img, pizza.username);
+    let thing = files[key];
+    things.importThing(thing.name, thing.toppings, thing.img, thing.username);
   }
 
   // prep toppings

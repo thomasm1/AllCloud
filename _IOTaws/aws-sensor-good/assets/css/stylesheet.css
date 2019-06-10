@@ -2,9 +2,12 @@ body {
   margin: 0;
   font-family: Arial;
   color: #505050;
+  background-color:aliceblue;
+  border: 1 solid blue;
 }
 body.index {
-  background-color: gray;
+  background-color:aliceblue;
+  border: 1 solid blue;
 }
 header {
   z-index: 1001;
@@ -48,6 +51,7 @@ button:focus {
 }
 #main {
   margin-top: -10%;
+  background:aliceblue;
 }
 #callToAction {
   padding-top: 10%;
@@ -58,18 +62,18 @@ button:focus {
 #callToAction h3 {
   margin-bottom: 35px;
 }
-.make-pizza-button {
+.make-thing-button {
   margin-bottom: 50px;
 }
-.make-pizza-button > a {
+.make-thing-button > a {
   background-color: #69D2E7;
   padding: 15px;
   color: white;
   text-decoration: none;
   border-right: solid 6px #A7DBD8;
 }
-.make-pizza-button > a:hover,
-.make-pizza-button > a:focus {
+.make-thing-button > a:hover,
+.make-thing-button > a:focus {
   background-color: #A7DBD8;
 }
 .user {
@@ -87,40 +91,40 @@ button:focus {
   opacity: .8;
 }
 #more {
-  background: white;
+  background-image:url("//tmm-nov.s3.amazonaws.com/img/paper.png");
   overflow: hidden;
   text-align: center;
 }
-.pizza-boxes {
+.thing-boxes {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 50px 0;
 }
-.pizza-boxes li {
+.thing-boxes li {
   padding: 20px;
   min-width: 65px;
   min-height: 65px;
   margin: 0 20px 15px;
 }
-.pizza-boxes li img {
+.thing-boxes li img {
   height: 100px;
   width: 100px;
 }
-.pizza-boxes li:nth-child(3n+1) {
+.thing-boxes li:nth-child(3n+1) {
   background-color: #69D2E7;
   border-right: solid 6px #A7DBD8;
 }
-.pizza-boxes li:nth-child(3n+2) {
+.thing-boxes li:nth-child(3n+2) {
   background-color: #A7DBD8;
   border-right: solid 6px #CFEFED;
 }
-.pizza-boxes li:nth-child(3n+3) {
+.thing-boxes li:nth-child(3n+3) {
   background-color: #F38630;
   border-right: solid 6px #FDBD8A;
 }
-.pizza-boxes li a {
+.thing-boxes li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -147,57 +151,57 @@ footer a {
   font-size: 16px;
 }
 
-/*--------------------------pizza-------------------------------*/
+/*--------------------------thing-------------------------------*/
 
-#viewPizza {
+#viewThing {
   text-align: center;
   margin-bottom: 75px;
 }
-#viewPizza .title {
+#viewThing .title {
   width: 100%;
   background: #69D2E7;
   color: white;
   padding: 10px 0;
   margin-bottom: 20px;
 }
-#viewPizza .title .pizza-name {
+#viewThing .title .thing-name {
   font-size: 32px;
   margin-right: 10px;
 }
-#viewPizza .title a {
+#viewThing .title a {
   text-decoration: none;
   color: white;
   margin-left: 8px;
   font-size: 18px;
   font-weight: bold;
 }
-#viewPizza .title a:hover,
-#viewPizza .title a:focus {
+#viewThing .title a:hover,
+#viewThing .title a:focus {
   text-decoration: underline;
 }
-#viewPizza .pizza-image {
+#viewThing .thing-image {
   display: inline-block;
   margin: 0 50px;
   max-width: 80%;
 }
-#viewPizza .pizza-toppings {
+#viewThing .thing-toppings {
   display: inline-block;
   text-align: center;
   vertical-align: top;
 }
-#viewPizza .pizza-toppings ul {
+#viewThing .thing-toppings ul {
   padding-left: 0;
 }
-#viewPizza .pizza-toppings ul li {
+#viewThing .thing-toppings ul li {
   list-style-type: none;
 }
 
-/*--------------------------make.pizza-------------------------------*/
-#makePizza {
+/*--------------------------make.thing-------------------------------*/
+#makeThing {
   padding: 0 0 10%;
   overflow: hidden;
 }
-#makePizza > h1 {
+#makeThing > h1 {
   text-align: center;
 }
 #toppingSection {
@@ -205,18 +209,18 @@ footer a {
   display: inline-block;
   position: absolute;
 }
-#pizzaSection {
+#thingSection {
   margin-left: 2%;
   display: inline-block;
 }
-#pizzaSection .name {
+#thingSection .name {
   margin-bottom: 15px;
 }
-#pizzaSection .name input {
+#thingSection .name input {
   width: 310px;
 }
 
-#pizzaSection #pizza {
+#thingSection #thing {
   border: solid 1px #69D2E7;
 }
 #toppingSection #toppings {

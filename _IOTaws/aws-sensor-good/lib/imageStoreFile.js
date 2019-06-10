@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 module.exports.save = (name, data, callback) => {
-  let fileName = '/assets/pizzas/' + name + '.png';
+  let fileName = '/assets/things/' + name + '.png';
 
   fs.writeFile(__dirname + '/..' + fileName, data, 'base64', (err) => {
     callback(err, fileName);

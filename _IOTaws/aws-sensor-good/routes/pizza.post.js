@@ -3,9 +3,9 @@
 module.exports = (handlers) => {
   return {
     method: 'POST',
-    path: '/pizza',
+    path: '/thing',
     config: {
-      handler: handlers.pizza
+      handler: handlers.thing
     }
   };
 };
