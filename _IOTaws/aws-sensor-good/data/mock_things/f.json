@@ -1,6 +1,6 @@
 {
 	"name": "f",
-	"toppings": ["dough_crust", "marinara_sauce", "banana_peppers", "rainbows", "money"],
+	"toppings": ["a", "b", "c", "d", "e"],
 	"img": "/assets/things/f.png",
 	"username": "Thomas"
 }

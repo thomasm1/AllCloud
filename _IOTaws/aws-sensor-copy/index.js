@@ -3,8 +3,8 @@
 const Hapi = require('hapi');
 
 const server = new Hapi.Server();
-server.connection({ port: process.env.PORT || 3010 });
-console.log('starting on ... 3010');
+server.connection({ port: process.env.PORT || 3001 });
+console.log('starting on ... 3001');
 
 function startServer() {
   server.start((err) => {

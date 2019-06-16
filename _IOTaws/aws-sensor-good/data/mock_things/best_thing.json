@@ -1,6 +1,6 @@
 {
 	"name": "best thing",
-	"toppings": ["dough_crust", "marinara_sauce", "mozzarella_cheese", "cheddar_cheese", "mushrooms", "pepperoni", "banana_peppers", "ham", "green_peppers"],
+	"toppings": ["a", "b", "c", "d", "e", "f", "g", "h", "i"],
 	"img": "//s3.amazonaws.com/aws-sensor-temperature/things/best-thing.png",
-	"username": "ryan"
+	"username": "tom"
 }
