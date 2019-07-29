@@ -1,9 +1,13 @@
+
 body {
   margin: 0;
   font-family: Arial;
   color: #505050;
-  background-color:aliceblue;
+  background-image:url("//aws-sensor-temperature.s3.amazonaws.com/img/bluechiptile.jpg") repeat;
   border: 1 solid blue;
+  padding-left: 5%;
+  padding-right: 5%;
+  min-height:800px;
 }
 body.index {
   background-color:aliceblue;
@@ -20,10 +24,18 @@ header img.logo {
   position: absolute;
   top: 5px;
   left: 25px;
+  padding:10px;
+  border: outset 5px silver;
+  border-radius:15%;
+  background-image:url("//aws-sensor-temperature.s3.amazonaws.com/img/bluechiptile.jpg");
 }
 #main img.logo {
   max-height: 150px;
   max-width: 75%;
+  padding:10px;
+  border: outset 5px silver;
+  border-radius:15%;
+  background-image:url("//aws-sensor-temperature.s3.amazonaws.com/img/bluechiptile.jpg");
 }
 input {
   padding-left: 15px;
@@ -51,7 +63,15 @@ button:focus {
 }
 #main {
   margin-top: -10%;
-  background:aliceblue;
+  background:url('//s3.amazonaws.com/aws-sensor-temperature/header.png');
+}
+div#main {
+  
+  background:url('//s3.amazonaws.com/aws-sensor-temperature/header-trans.png');
+}
+div#callToAction {
+  
+  background:url('//s3.amazonaws.com/aws-sensor-temperature/header-trans.png');
 }
 #callToAction {
   padding-top: 10%;
@@ -81,17 +101,22 @@ button:focus {
   color: white;
   right: 25px;
   top: 15px;
+  padding:10px;
+  border: outset 5px silver;
+  border-radius:15%;
+  background-image:url("//aws-sensor-temperature.s3.amazonaws.com/img/bluechiptile.jpg");
 }
 .user a {
   color: white;
-  text-decoration: none;
+  text-decoration: none; 
 }
 .user a:hover,
 .user a:focus {
   opacity: .8;
 }
 #more {
-  background-image:url("//tmm-nov.s3.amazonaws.com/img/paper.png");
+  background-image:url("//aws-sensor-temperature.s3.amazonaws.com/img/bluechiptile.jpg");
+  color:white;
   overflow: hidden;
   text-align: center;
 }

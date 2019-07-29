@@ -5,10 +5,11 @@ const things = require('./things'),
   users = require('./users'),
   transfile = require('../lib/transfile');
 
+  // Demo purposes only 
 module.exports.insertData = () => {
-  users.createUser('ryan', 'pass', () => {});
-  users.createUser('jim', 'pass', () => {});
-  users.createUser('kathy', 'pass', () => {});
+  users.createUser('tom', 'pass', () => {});
+  users.createUser('1234', '1234', () => {});
+  users.createUser('user-name', 'password', () => {});
 
   const files = transfile(__dirname + '/mock_things/');
   for (let key in files) {

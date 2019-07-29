@@ -14,9 +14,8 @@ attachHandlers();
 function loadImages () {
   $.each(toppings, function (key, val) {
     var img = new Image();
-    img.setAttribute('crossOrigin', 'anonymous');
-    //img.src = '//s3.amazonaws.com/aws-sensor-temperature/toppings/' + val.image;
-    img.src = 'assets/toppings/' + val.image;
+    img.setAttribute('crossOrigin', 'anonymous'); 
+    img.src = '//s3.amazonaws.com/aws-sensor-temperature/toppings/' + val.image;
     
     val.img = img;
   });
@@ -59,7 +58,7 @@ function sendThing () {
   var pkg = {
     toppings: topps,
     username: $('#userInfo').data('username'),
-    name: document.getElementById('thingName').value,
+    name: (document.getElementById('thingName').value || '_'),
     img: getThingImage()
   };
 
