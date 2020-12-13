@@ -1,0 +1,12 @@
+#LINKS
+
+https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors
+https://getcomposer.org/download/
+https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_installation.html
+
+
+# If you are experiencing memory issues with your t2.micro when trying to install the AWS SDK, please run the following commands and try again:
+
+/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+/sbin/mkswap /var/swap.1
+/sbin/swapon /var/swap.1
