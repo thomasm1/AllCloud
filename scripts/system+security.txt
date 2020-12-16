@@ -1,0 +1,121 @@
+## SYSTEM 
+1* operating system, kernel, and hardware arch
+cat /etc/redhat-release
+cat /etc/*-release
+uname -a
+hostnamectl
+uptime
+
+2* Is anyone else on board?
+who
+who -Hu
+grep sh$ /etc/passwd # users in the /etc/passwd file who have shell access
+
+3* Physical (IBM,HP) or virtual machine(KVM, VirtualBox, etc.,)
+dmidecode -s system-manufacturer
+dmidecode -s system-product-name
+lshw -c system | grep product | head -1 #?
+cat /sys/class/dmi/id/product_name
+cat /sys/class/dmi/id/sys_vendor
+
+4* Server's hardware capabilities,CPU,how many cores,which flags are enabled, and how much memory
+lscpu or cat /proc/cpuinfo
+lsmem or cat /proc/meminfo
+ifconfig -a
+ethtool <devname> # type and capacity of the Ethernet or other network devices
+lshw 
+lspci  
+dmidecode
+
+5* Installed software
+rpm -qa
+rpm -qa | grep <pkgname>
+rpm -qi <pkgname>
+yum repolist
+yum repoinfo
+yum install <pkgname>
+ls -l /etc/yum.repos.d/
+
+6* Running processes and services
+pstree -pa 1
+ps -ef
+ps auxf
+systemctl
+
+7* Network connections
+	-ports are open on the server, 
+	-connections from the network to the test machine, 
+	-if firewall is enabled,is it blocking any ports,
+	-which DNS servers the machine talks to.
+netstat -tulpn
+netstat -anp
+lsof -i
+ss
+iptables -L -n
+cat /etc/resolv.conf
+
+8* Kernel
+uname -r
+cat /proc/cmdline
+lsmod
+modinfo <module>
+sysctl -a
+cat /boot/grub2/grub.cfg
+
+9* Logs
+dmesg
+tail -f /var/log/messages
+journalctl
+
+## SECURITY
+1. Update your server
+$ sudo apt update && sudo apt upgrade -y #On Ubuntu and Debian:
+$ sudo dnf upgrade #On Fedora, CentOS, or RHEL:
+
+2. Create a new privileged user account
+$ adduser <username> # sudo rights by appending (-a) the sudo group (-G) to the user's group membership:
+$ usermod -a -G sudo <username>
+
+3. Upload your SSH key #upload your pre-generated SSH key to your new server using the ssh-copy-id command:
+ ssh-copy-id <username>@ip_address
+ 
+4. Secure SSH 
+	-Disable SSH password authentication
+	-Restrict root from logging in remotely
+	-Restrict access to IPv4 or IPv6
+	-Open /etc/ssh/sshd_config using your text editor of choice and ensure these lines:
+PasswordAuthentication yes ->no
+PermitRootLogin yes  ->no
+
+	-restrict the SSH service to either IPv4 or IPv6 by modifying the AddressFamily option. To change it to use only IPv4 (which should be fine for most folks) make this change:
+
+AddressFamily inet
+	-Restart the SSH service to enable your changes. Note that it's a good idea to have two active connections to your server before restarting the SSH server. Having that extra connection allows you to fix anything should the restart go wrong.
+
+$ sudo service sshd restart #On Ubuntu:
+$ sudo systemctl restart sshd #On Fedora or CentOS or anything using Systemd:
+
+5. Enable a firewall  https://launchpad.net/ufw
+	https://www.redhat.com/sysadmin/secure-linux-network-firewall-cmd?extIdCarryOver=true&sc_cid=701f2000001OH7nAAG
+	-Uncomplicated Firewall (UFW) is an easy-to-use interface to iptables -configuring a firewall.
+$ sudo apt install ufw
+	-By default, UFW denies all incoming connections and allows all outgoing connections. This means any application on your server can reach the internet, but anything trying to reach your server cannot connect.
+
+	-can log in by enabling access to SSH, HTTP, and HTTPS: 
+$ sudo ufw allow ssh
+$ sudo ufw allow http
+$ sudo ufw allow https
+$ sudo ufw enable
+$ sudo ufw status  #You can see what services are allowed and denied with:
+	-If you ever want to disable UFW, you can do so by typing:
+$ sudo ufw disable
+
+7. Remove unused network-facing services
+	-Almost all Linux server operating systems come with a few network-facing services enabled. You'll want to keep most of them. However, there are a few that you might want to remove. You can see all running network services by using the ss command:
+
+$ sudo ss -atpu
+	-The output from ss will differ depending on your operating system. This is an example of what you might see. It shows that the SSH (sshd) and Ngnix (nginx) services are listening and ready for connection:
+
+tcp LISTEN 0 128 *:http *:* users:(("nginx",pid=22563,fd=7))
+tcp LISTEN 0 128 *:ssh *:* users:(("sshd",pid=685,fd=3))
+ 
