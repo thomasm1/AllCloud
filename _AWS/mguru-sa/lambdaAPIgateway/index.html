@@ -1,0 +1,23 @@
+<html>
+<script>
+
+function apiFunction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("commuterLinkId").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "https://n5c2760wmj.execute-api.us-east-1.amazonaws.com/default/commuterLinkAPI", true);
+    xhttp.send();
+
+
+}
+
+</script>
+<body><div align="center"><br><br><br><br>
+<h1>Welcome to <span id="commuterLinkId">Daily Tech's CommuterLink!</span></h1>
+<button onclick="apiFunction()">Login</button><br>
+<img src="https://tmm-nov.s3.amazonaws.com/img/banners/ourdailytechBanner.png"></div>
+</body>
+</html>
