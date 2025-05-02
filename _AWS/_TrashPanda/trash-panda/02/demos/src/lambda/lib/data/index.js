@@ -1,5 +1,0 @@
-module.exports.Action = require('./action')
-module.exports.Food = require('./food')
-module.exports.Game = require('./game')
-module.exports.TrashPanda = require('./trash-panda')
-module.exports.TrashPandaPrefs = require('./trash-panda-prefs')

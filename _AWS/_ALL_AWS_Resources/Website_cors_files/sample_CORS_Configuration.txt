@@ -1,0 +1,15 @@
+[
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "http://the-index-bucket.s3-website-use-east-1.amazonaws.com"
+        ],
+        "MaxAgeSeconds": 3000
+    }
+]
+
