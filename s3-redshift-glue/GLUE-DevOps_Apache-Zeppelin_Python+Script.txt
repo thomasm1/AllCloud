@@ -1,0 +1,23 @@
+%pyspark
+
+import sys
+
+from pyspark.context import SparkContext
+
+from awsglue.context import GlueContext
+
+from awsglue.transforms import *
+
+# Create a Glue context
+
+glueContext = GlueContext(SparkContext.getOrCreate())
+
+# Create a DynamicFrame using the  table
+
+persons_DyF = glueContext.create_dynamic_frame.from_catalog(database="zeppelintest",table_name="citydata_csv")
+
+# Print out information about this data
+
+print "Count: ", persons_DyF.count()
+
+persons_DyF.printSchema()
